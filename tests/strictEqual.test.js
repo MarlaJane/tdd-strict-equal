@@ -4,57 +4,29 @@ const expect = require('chai').expect
 const sEqual = require('../strictEqual')
 
 describe('StrictEqual', () => {
-    describe('sEqual', () => {
-        it('returns true if both parameters are equal integers', () => {
-            // create test data
-            const val1 = 1
-            const val2 = 1
-            //call the function with the test data
-            const answer = sEqual
+	describe('sEqual', () => {
+		it('returns true if both parameters are equal integers', () => {
+			const answer = sEqual(1, 1)
+			expect(answer); (true)
+		})
 
-            //make assertions about what should be true
-            expect(answer); (true)
-        })
-        it('returns true if both parameters are equal strings', () => {
-            // create test data
-            const val1 = 'a'
-            const val2 = 'a'
-            //call the function with the test data
-            const answer = sEqual
+		it('returns true if both parameters are equal strings', () => {
+			const answer = sEqual('a', 'a')
+			expect(answer); (true)
+		})
 
-            //make assertions about what should be true
-            expect(answer); (true)
-        })
-        it('returns false if both parameters are not equal integers', () => {
-            // create test data
-            const val1 = 1
-            const val2 = 3
-            //call the function with the test data
-            const answer = sEqual
+		it('returns false if both parameters are not equal integers', () => {
+			const answer = sEqual(1, 3)
+			expect(answer); (false)
+		})
 
-            //make assertions about what should be true
-            expect(answer); (false)
-        })
-        it('returns false if both parameters are not equal integers', () => {
-            // create test data
-            const val1 = 'a'
-            const val2 = 'b'
-            //call the function with the test data
-            const answer = sEqual
-
-            //make assertions about what should be true
-            expect(answer); (false)
-
-        })
-        it('returns false if both parameters are not the same dataype', () => {
-            // create test data
-            const val1 = 1
-            const val2 = 'a'
-            //call the function with the test data
-            const answer = sEqual
-
-            //make assertions about what should be true
-            expect(answer); (false)
-        })
-    })
+		it('returns false if both parameters are not equal integers', () => {
+			const answer = sEqual('a', 'b')
+			expect(answer); (false)
+		})
+		it('returns false if both parameters are not the same dataype', () => {
+			const answer = sEqual(1, 'a')
+			expect(answer); (false)
+		})
+	})
 })
